@@ -29,7 +29,7 @@ def no_more_bidders():
     return input("Are there any other bidders? Type 'yes' or 'no'. \n").lower() != 'yes'
 
 def clear_console():
-    system('cls')
+    print('\n' * 20)
 
 while True:
     store_bidder()
