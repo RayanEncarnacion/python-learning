@@ -18,13 +18,12 @@ print('''
 
 print('Welcome to the secret auction program. \n')
 
-bidders = []
+bidders = {}
 
 def store_bidder():
-    bidders.append({
-        'name': input('What is your name? '),
-        'bid': int(input('What is your bid? $'))
-    })
+    name = input('What is your name? ')
+    bid = int(input('What is your bid? $'))
+    bidders[name] = bid
 
 def no_more_bidders():
     return input("Are there any other bidders? Type 'yes' or 'no'. \n").lower() != 'yes'
@@ -39,8 +38,7 @@ while True:
         break
     clear_console()
 
-
 clear_console()
-max_bidder = max(bidders, key=lambda x: x['bid'])
-print(f"The highest bidder is {max_bidder['name']} with a bid of ${max_bidder['bid']}.")
+max_bidder_name = max(bidders, key=bidders.get)
+print(f"The highest bidder is {max_bidder_name} with a bid of ${bidders[max_bidder_name]}.")
     
