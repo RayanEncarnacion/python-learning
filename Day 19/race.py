@@ -44,7 +44,7 @@ def play(screen: _Screen,
          x_axis_end: int | float) -> None:
     
     running = True
-    guess = screen.textinput(title='Make your bet', prompt='Who will win the reace? Enter a colour:')
+    guess = screen.textinput(title='Make your bet', prompt='Who will win the race? Enter a colour:')
     
     while running:
         for turtle in turtles:
